@@ -1,29 +1,69 @@
 <template>
-  <div id="app">
-    <flip flip="true" active-hover="true">
-      <span slot="flip">face 1</span>
-      <span slot="flap">face 2</span>
-    </flip>
+  <div class="flip-container" :class="{ 'active-hover': activeHover, 'hover': hover }" @click="handlerHover">
+    <div class="flipper">
+      <div class="front">
+        <slot name="front"></slot>
+      </div>
+      <div class="back">
+        <slot name="back"></slot>
+      </div>
+    </div>
   </div>
 </template>
+
 <script>
-import Flip from './components/Flip'
-
-export default {
-  name: 'app',
-  components: {
-    Flip
+  export default {
+    name: 'flip',
+    props: ['active-click', 'active-hover'],
+    data () {
+      return {
+        hover: false
+      }
+    },
+    methods: {
+      handlerHover () {
+        this.hover = !this.hover
+      }
+    }
   }
-}
 </script>
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
 
+<style>
+  .flip-container {
+    perspective: 1000;
+  }
+
+  .flip-container.active-hover:hover .flipper,
+  .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+  .flip-container, .front, .back {
+    width: 320px;
+    height: 427px;
+  }
+
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  .front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .front {
+    z-index: 2;
+  }
+
+  .back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+</style>
