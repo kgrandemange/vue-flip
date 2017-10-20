@@ -14,7 +14,7 @@
 <script>
   export default {
     name: 'flip',
-    props: ['active-click', 'active-hover'],
+    props: ['activeClick', 'activeHover'],
     data () {
       return {
         hover: false
@@ -22,7 +22,9 @@
     },
     methods: {
       handlerHover () {
-        this.hover = !this.hover
+        if (this.activeClick) {
+          this.hover = !this.hover
+        }
       }
     }
   }
