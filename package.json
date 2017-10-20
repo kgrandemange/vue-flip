@@ -9,6 +9,7 @@
   "author": "Kevin Grandemange",
   "license": "MIT",
   "dependencies": {
+    "css-loader": "^0.28.7"
   },
   "repository": {
     "type": "git",
