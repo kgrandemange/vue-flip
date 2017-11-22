@@ -17,8 +17,7 @@ Include the script file, then install the component with `Vue.use(VueFlip);`:
   Vue.use(VueFlip);
 </script>
 ```
-
-## Module
+## Module
 
 ```javascript
 import VueFlip from 'vue-flip'
@@ -29,7 +28,14 @@ import VueFlip from 'vue-flip'
 Use this template:
 
 ```html
-<vue-flip></vue-flip>
+<vue-flip>
+  <div slot="front">
+    front
+  </div>
+  <div slot="back">
+    back
+  </div>
+</vue-flip>
 ```
 
 You can active the flip on the click with:
@@ -39,6 +45,7 @@ You can active the flip on the click with:
 ```
 
 or you can active on the hover with:
+
 ```javascript
 <vue-flip active-hover="true"></vue-flip>
 ```
