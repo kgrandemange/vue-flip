@@ -3,13 +3,14 @@
        :class="{ 'active-hover': activeHover, 'hover': hover }"
        :style="{ width: width, height: height }"
        @click="handlerHover">
-    <div class="flipper">
+    <div class="flipper"
+         :style="cardStyle">
       <div class="front"
-           :style="{ 'width': width, 'height': height }">
+           :style="cardStyle">
         <slot name="front"></slot>
       </div>
       <div class="back"
-           :style="{ 'width': width, 'height': height }">
+           :style="cardStyle">
         <slot name="back"></slot>
       </div>
     </div>
@@ -20,7 +21,7 @@
   export default {
     name: 'flip',
     props: {
-      'activeClick': Sting,
+      'activeClick': Boolean,
       'activeHover': Boolean,
       'width': {
         type: String,
@@ -30,7 +31,23 @@
     },
     data () {
       return {
-        hover: false
+        hover: false,
+        activeHover: false
+      }
+    },
+    computed: {
+      cardStyle () {
+        let result = {}
+
+        if (this.height) {
+          result.height = this.height.includes('%') ? '100%' : this.height
+        }
+
+        if (this.width) {
+          result.width = this.width.includes('%') ? '100%' : this.width
+        }
+
+        return result
       }
     },
     methods: {
