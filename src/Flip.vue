@@ -1,10 +1,15 @@
 <template>
-  <div class="flip-container" :class="{ 'active-hover': activeHover, 'hover': hover }" @click="handlerHover">
+  <div class="flip-container"
+       :class="{ 'active-hover': activeHover, 'hover': hover }"
+       :style="{ width: width, height: height }"
+       @click="handlerHover">
     <div class="flipper">
-      <div class="front">
+      <div class="front"
+           :style="{ 'width': width, 'height': height }">
         <slot name="front"></slot>
       </div>
-      <div class="back">
+      <div class="back"
+           :style="{ 'width': width, 'height': height }">
         <slot name="back"></slot>
       </div>
     </div>
@@ -14,7 +19,15 @@
 <script>
   export default {
     name: 'flip',
-    props: ['activeClick', 'activeHover'],
+    props: {
+      'activeClick': Sting,
+      'activeHover': Boolean,
+      'width': {
+        type: String,
+        required: true
+      },
+      'height': String
+    },
     data () {
       return {
         hover: false
@@ -38,11 +51,6 @@
   .flip-container.active-hover:hover .flipper,
   .flip-container.hover .flipper {
     transform: rotateY(180deg);
-  }
-
-  .flip-container, .front, .back {
-    width: 320px;
-    height: 427px;
   }
 
   .flipper {
