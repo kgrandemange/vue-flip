@@ -21,8 +21,16 @@
   export default {
     name: 'flip',
     props: {
-      'activeClick': Boolean,
-      'activeHover': Boolean,
+      'activeClick': {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      'activeHover': {
+        type: Boolean,
+        required: false,
+        default: false
+      },
       'width': {
         type: String,
         required: true
@@ -31,8 +39,7 @@
     },
     data () {
       return {
-        hover: false,
-        activeHover: false
+        hover: false
       }
     },
     computed: {
