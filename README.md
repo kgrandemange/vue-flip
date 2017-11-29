@@ -50,4 +50,11 @@ or you can active on the hover with:
 <vue-flip active-hover="true"></vue-flip>
 ```
 
+|               | Description             | Type    | Default Value |
+| ------------- | ----------------------- | ------- | ------------- |
+| active-click  | flip on click           | Boolean | False         |
+| active-hover  | flip on hover           | Boolean | False         |
+| height        | height of the component | String  |               |
+| width         | width of the component  | String  |               |
+
 
