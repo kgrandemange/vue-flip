@@ -2,6 +2,10 @@
 
 A vue component that shows a flip component.
 
+## Demo
+
+[Here](https://vue-flip.kevingrandemange.net/)
+
 ## Installation
 
 npm i vue-flip
