@@ -1,6 +1,6 @@
 {
   "name": "vue-flip",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A Vue.js component that flip an image.",
   "main": "dist/vue-flip.js",
   "scripts": {
