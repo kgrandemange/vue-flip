@@ -60,7 +60,8 @@ or you can active on the hover with:
 | ------------- | ----------------------- | ------- | ------------- |
 | active-click  | flip on click           | Boolean | False         |
 | active-hover  | flip on hover           | Boolean | False         |
-| height        | height of the component | String  |               |
-| width         | width of the component  | String  |               |
+| height        | coponent height         | String  |               |
+| width         | component with          | String  |               |
+| transition    | component transition    | String  | 0.5s          |
 
 
