@@ -35,7 +35,12 @@
         type: String,
         required: true
       },
-      'height': String
+      'height': String,
+      'transition': {
+        type: String,
+        required: false,
+        default: '0.5s'
+      }
     },
     data () {
       return {
@@ -52,6 +57,10 @@
 
         if (this.width) {
           result.width = this.width.includes('%') ? '100%' : this.width
+        }
+
+        if (this.transition) {
+          result.transition = this.transition
         }
 
         return result
