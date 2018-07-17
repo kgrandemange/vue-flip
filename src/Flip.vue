@@ -101,6 +101,10 @@
 
   .front {
     z-index: 2;
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -o-transform: rotateY(0);
+    transform: rotateY(0);
   }
 
   .back {
