@@ -8,7 +8,8 @@ A vue component that shows a flip component.
 
 ## Installation
 
-npm i vue-flip
+`npm i vue-flip`
+`yarn add vue-flip`
 
 ## Browser
 
@@ -23,8 +24,19 @@ Include the script file, then install the component with `Vue.use(VueFlip);`:
 ```
 ## Module
 
+```vue
+<template>
+  <vue-flip></vue-flip>
+<.template>
+```
+
 ```javascript
-import VueFlip from 'vue-flip'
+import VueFlip from 'vue-flip';
+export default {
+  components: {
+    'vue-flip': VueFlip
+  }
+}
 ```
 
 ## Usage
