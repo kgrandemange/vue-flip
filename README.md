@@ -27,7 +27,7 @@ Include the script file, then install the component with `Vue.use(VueFlip);`:
 ```vue
 <template>
   <vue-flip></vue-flip>
-<.template>
+</template>
 ```
 
 ```javascript
@@ -43,7 +43,7 @@ export default {
 
 Use this template:
 
-```html
+```vue
 <vue-flip>
   <div slot="front">
     front
@@ -56,13 +56,13 @@ Use this template:
 
 You can active the flip on the click with:
 
-```javascript
+```vue
 <vue-flip active-click="true"></vue-flip>
 ```
 
 or you can active on the hover with:
 
-```javascript
+```vue
 <vue-flip active-hover="true"></vue-flip>
 ```
 
