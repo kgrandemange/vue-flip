@@ -9,6 +9,7 @@ A vue component that shows a flip component.
 ## Installation
 
 `npm i vue-flip`
+
 `yarn add vue-flip`
 
 ## Browser
