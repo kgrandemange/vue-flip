@@ -67,6 +67,16 @@ or you can active on the hover with:
 <vue-flip active-hover="true"></vue-flip>
 ```
 
+or you can bind with a variable:
+
+```vue
+<vue-flip :bindWithMe="flipped"></vue-flip>
+```
+
+```vue
+this.flipped = true; //or false -> to flip front/back
+```
+
 # Properties
 
 |               | Description             | Type    | Default Value |
@@ -76,5 +86,6 @@ or you can active on the hover with:
 | height        | coponent height         | String  |               |
 | width         | component with          | String  |               |
 | transition    | component transition    | String  | 0.5s          |
+| bindWithMe    | bind flip with variable | Boolean |               |
 
 
