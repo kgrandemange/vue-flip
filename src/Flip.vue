@@ -40,6 +40,10 @@
         type: String,
         required: false,
         default: '0.5s'
+      },
+      'bindWithMe':{
+        type: Boolean,
+        required: false
       }
     },
     data () {
@@ -70,6 +74,16 @@
       handlerHover () {
         if (this.activeClick) {
           this.hover = !this.hover
+        }
+      }
+    },
+    watch:{
+      bindWithMe:{
+        immediate: true,
+        handler(val){
+          if (val != undefined && (val === true || val === false)) {
+            this.hover = val;
+          }
         }
       }
     }
