@@ -16,7 +16,7 @@ A vue component that shows a flip component.
 
 Include the script file, then install the component with `Vue.use(VueFlip);`:
 
-```html 
+```html
 <script type="text/javascript" src="node_modules/vuejs/dist/vue.min.js"></script>
 <script type="text/javascript" src="node_modules/vue-clock-simple/dist/vue-flip.min.js"></script>
 <script type="text/javascript">
@@ -79,13 +79,13 @@ this.flipped = true; //or false -> to flip front/back
 
 # Properties
 
-|               | Description             | Type    | Default Value |
-| ------------- | ----------------------- | ------- | ------------- |
-| active-click  | flip on click           | Boolean | False         |
-| active-hover  | flip on hover           | Boolean | False         |
-| height        | coponent height         | String  |               |
-| width         | component with          | String  |               |
-| transition    | component transition    | String  | 0.5s          |
-| bindWithMe    | bind flip with variable | Boolean |               |
+|               | Description             | Type    | Required | Default Value |
+| ------------- | ----------------------- | ------- | -------- | ------------- |
+| active-click  | flip on click           | Boolean | False    | False         |
+| active-hover  | flip on hover           | Boolean | False    | False         |
+| height        | component height         | String  | False    |               |
+| width         | component with          | String  | True     |               |
+| transition    | component transition    | String  | False    | 0.5s          |
+| bindWithMe    | bind flip with variable | Boolean | False    |               |
 
 
