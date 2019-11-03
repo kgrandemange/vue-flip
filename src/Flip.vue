@@ -116,6 +116,7 @@
   }
 
   .front, .back {
+    transform-style: preserve-3d; /* this fixed chrome issue*/
     -webkit-backface-visibility: hidden;
        -moz-backface-visibility: hidden;
             backface-visibility: hidden;
