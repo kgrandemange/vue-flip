@@ -17,9 +17,11 @@ A vue component that shows a flip component.
 Include the script file:
 
 ```html
+  <link rel="stylesheet" href="node_modules/vue-flip/dist/vueFlip.css">
   <vue-flip></vue-flip>
   <script src="https://unpkg.com/vue"></script>
   <script type="text/javascript" src="node_modules/vue-flip/dist/vueFlip.common.js"></script>
+
   <script>
       new Vue({
         components: {
