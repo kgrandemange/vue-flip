@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "A Vue.js component that flip an image.",
   "main": "./dist/vueFlip.common.js",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vueFlip ./src/components/Flip.vue",
