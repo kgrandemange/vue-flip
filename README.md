@@ -4,7 +4,7 @@ A vue component that shows a flip component.
 
 ## Demo
 
-[Here](https://vue-flip.kevingrandemange.net/)
+[Here](https://kgrandemange.github.io/vue-flip/)
 
 ## Installation
 
