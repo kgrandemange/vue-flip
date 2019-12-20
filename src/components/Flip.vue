@@ -21,8 +21,8 @@
 </template>
 
 <script>
-  import {createComponent, ref, watch} from '@vue/composition-api'
-  export default createComponent({
+  import {ref, watch} from '@vue/composition-api'
+  export default {
     name: 'flip',
     props: {
       activeClick: {
@@ -53,37 +53,33 @@
         required: false
       }
     },
-    setup (props, { emit }) {
-      const hover = ref(false)
-      const handlerHover = () => {
-        if (props.activeClick) {
-          hover.value = !hover.value
-          emit('input', hover.value)
-        }
-      }
-      const handlerMouseout = () => {
-        if (props.activeHover) {
-          emit('input', false)
-        }
-      }
-      const handlerMouseover = () => {
-        if (props.activeHover) {
-          emit('input', true)
-        }
-      }
-
-      watch('value', () => {
-        hover.value = props.value
-      })
-
+    data () {
       return {
-        hover,
-        handlerHover,
-        handlerMouseout,
-        handlerMouseover
+        hover: false
+      }
+    },
+    methods: {
+      handlerHover () {
+        this.hover = !this.hover
+        this.$emit('input', this.hover.value)
+      },
+      handlerMouseout () {
+        if (this.activeHover) {
+          this.$emit('input', false)
+        }
+      },
+      handlerMouseover () {
+        if (this.activeHover) {
+          this.$emit('input', true)
+        }
+      }
+    },
+    watch: {
+      'value': () => {
+        hover.value = props.value
       }
     }
-  })
+  }
 </script>
 
 <style>
