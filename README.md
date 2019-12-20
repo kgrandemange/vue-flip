@@ -14,13 +14,18 @@ A vue component that shows a flip component.
 
 ## Browser
 
-Include the script file, then install the component with `Vue.use(VueFlip);`:
+Include the script file:
 
 ```html
-<script type="text/javascript" src="node_modules/vuejs/dist/vue.min.js"></script>
-<script type="text/javascript" src="node_modules/vue-clock-simple/dist/vue-flip.min.js"></script>
-<script type="text/javascript">
-  Vue.use(VueFlip);
+  <vue-flip></vue-flip>
+  <script src="https://unpkg.com/vue"></script>
+  <script type="text/javascript" src="node_modules/vue-flip/dist/vueFlip.common.js"></script>
+  <script>
+      new Vue({
+        components: {
+          vueFlip
+        }
+      }).$mount('#app')
 </script>
 ```
 ## Module
@@ -46,12 +51,12 @@ Use this template:
 
 ```vue
 <vue-flip>
-  <div slot="front">
+  <template v-slot:front>
     front
-  </div>
-  <div slot="back">
+  </template>
+  <template v-slot:back>
     back
-  </div>
+  </template>
 </vue-flip>
 ```
 
@@ -70,7 +75,7 @@ or you can active on the hover with:
 or you can bind with a variable:
 
 ```vue
-<vue-flip :bindWithMe="flipped"></vue-flip>
+<vue-flip v-model="flipped"></vue-flip>
 ```
 
 ```vue
@@ -83,9 +88,7 @@ this.flipped = true; //or false -> to flip front/back
 | ------------- | ----------------------- | ------- | -------- | ------------- |
 | active-click  | flip on click           | Boolean | False    | False         |
 | active-hover  | flip on hover           | Boolean | False    | False         |
-| height        | component height         | String  | False    |               |
+| height        | component height        | String  | False    |               |
 | width         | component with          | String  | True     |               |
 | transition    | component transition    | String  | False    | 0.5s          |
-| bindWithMe    | bind flip with variable | Boolean | False    |               |
-
-
+| v-model       | bind flip with variable | Boolean | False    |               |

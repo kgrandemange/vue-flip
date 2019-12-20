@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<title>vueFlip demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./vueFlip.umd.js"></script>
+
+<link rel="stylesheet" href="./vueFlip.css">
+
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: vueFlip
+  }
+}).$mount('#app')
+</script>
