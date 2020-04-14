@@ -21,7 +21,6 @@
 </template>
 
 <script>
-  import {ref, watch} from '@vue/composition-api'
   export default {
     name: 'flip',
     props: {
