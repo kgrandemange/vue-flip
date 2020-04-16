@@ -60,7 +60,7 @@
     methods: {
       handlerHover () {
         this.hover = !this.hover
-        this.$emit('input', this.hover.value)
+        this.$emit('input', this.hover)
       },
       handlerMouseout () {
         if (this.activeHover) {
@@ -74,8 +74,8 @@
       }
     },
     watch: {
-      'value': () => {
-        hover.value = props.value
+      value (value) {
+        this.hover = value
       }
     }
   }
