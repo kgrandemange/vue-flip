@@ -1,7 +1,27 @@
 <template>
   <div id="app">
-    <h1>Simple Example</h1>
+    <h1>Simple Example (hover)</h1>
     <vue-flip :active-hover="true" width="200px" height="50px">
+      <template v-slot:front class="front">
+        front
+      </template>
+      <template v-slot:back class="back">
+        back
+      </template>
+    </vue-flip>
+    <pre v-highlightjs><code class="html">
+      &lt;vue-flip :active-hover="true" width="200px" height="50px"&gt;
+        &lt;template v-slot:front class="front"&gt;
+          front
+        &lt;/template&gt;
+        &lt;template v-slot:back class="back"&gt;
+          back
+        &lt;/template&gt;
+      &lt;/vue-flip&gt;
+    </code></pre>
+
+    <h1>Simple Example (click)</h1>
+    <vue-flip :active-click="true" width="200px" height="50px">
       <template v-slot:front class="front">
         front
       </template>
