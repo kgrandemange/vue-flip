@@ -2,9 +2,9 @@
   <div class="flip-container"
        :class="{ 'active-hover': activeHover, 'hover': hover }"
        :style="{ width: width, height: height }"
-       @click="handlerHover"
-       @mouseover="handlerMouseover"
-       @mouseout="handlerMouseout"
+       @click="handleClick"
+       @mouseover="handleMouseover"
+       @mouseout="handleMouseout"
   >
     <div
       class="flipper"
@@ -58,18 +58,18 @@
       }
     },
     methods: {
-      handlerHover () {
+      handleClick () {
         if (this.activeClick) {
           this.hover = !this.hover
           this.$emit('input', this.hover)
         }
       },
-      handlerMouseout () {
+      handleMouseout () {
         if (this.activeHover) {
           this.$emit('input', false)
         }
       },
-      handlerMouseover () {
+      handleMouseover () {
         if (this.activeHover) {
           this.$emit('input', true)
         }
