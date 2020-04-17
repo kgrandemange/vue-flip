@@ -30,7 +30,7 @@
       </template>
     </vue-flip>
     <pre v-highlightjs><code class="html">
-      &lt;vue-flip :active-hover="true" width="200px" height="50px"&gt;
+      &lt;vue-flip :active-click="true" width="200px" height="50px"&gt;
         &lt;template v-slot:front class="front"&gt;
           front
         &lt;/template&gt;
