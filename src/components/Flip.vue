@@ -59,8 +59,10 @@
     },
     methods: {
       handlerHover () {
-        this.hover = !this.hover
-        this.$emit('input', this.hover)
+        if (this.activeClick) {
+          this.hover = !this.hover
+          this.$emit('input', this.hover)
+        }
       },
       handlerMouseout () {
         if (this.activeHover) {
