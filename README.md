@@ -1,3 +1,6 @@
+
+![Test](https://github.com/kgrandemange/vue-flip/workflows/Test/badge.svg)
+
 # vue-flip
 
 A vue component that shows a flip component.
