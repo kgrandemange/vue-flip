@@ -102,16 +102,22 @@
         &lt;/template&gt;
       &lt;/vue-flip&gt;
     </code></pre>
+
+    <hr />
+   
+    <pairs />
   </div>
 </template>
 
 <script>
   import vueFlip from './components/Flip'
+  import Pairs from './components/Pairs'
 
   export default {
     name: 'app',
     components: {
-      vueFlip
+      vueFlip,
+      Pairs
     },
     data: () => {
       return {
