@@ -539,12 +539,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0b8b841a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Flip.vue?vue&type=template&id=7e962a4a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"flip-container",class:{ 'active-hover': _vm.activeHover, 'hover': _vm.hover },style:({ width: _vm.width, height: _vm.height }),on:{"click":_vm.handlerHover,"mouseover":_vm.handlerMouseover,"mouseout":_vm.handlerMouseout}},[_c('div',{staticClass:"flipper",style:({ transition: _vm.transition })},[_c('div',{staticClass:"front"},[_vm._t("front")],2),_c('div',{staticClass:"back"},[_vm._t("back")],2)])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3e29ee32-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Flip.vue?vue&type=template&id=4d374f2d&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"flip-container",class:{ 'active-hover': _vm.activeHover, 'hover': _vm.hover },style:({ width: _vm.width, height: _vm.height }),on:{"click":_vm.handleClick,"mouseover":_vm.handleMouseover,"mouseout":_vm.handleMouseout}},[_c('div',{staticClass:"flipper",style:({ transition: _vm.transition })},[_c('div',{staticClass:"front"},[_vm._t("front")],2),_c('div',{staticClass:"back"},[_vm._t("back")],2)])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Flip.vue?vue&type=template&id=7e962a4a&
+// CONCATENATED MODULE: ./src/components/Flip.vue?vue&type=template&id=4d374f2d&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Flip.vue?vue&type=script&lang=js&
 //
@@ -606,16 +606,18 @@ var staticRenderFns = []
     };
   },
   methods: {
-    handlerHover: function handlerHover() {
-      this.hover = !this.hover;
-      this.$emit('input', this.hover);
+    handleClick: function handleClick() {
+      if (this.activeClick) {
+        this.hover = !this.hover;
+        this.$emit('input', this.hover);
+      }
     },
-    handlerMouseout: function handlerMouseout() {
+    handleMouseout: function handleMouseout() {
       if (this.activeHover) {
         this.$emit('input', false);
       }
     },
-    handlerMouseover: function handlerMouseover() {
+    handleMouseover: function handleMouseover() {
       if (this.activeHover) {
         this.$emit('input', true);
       }
