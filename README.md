@@ -20,18 +20,47 @@ A vue component that shows a flip component.
 Include the script file:
 
 ```html
-  <link rel="stylesheet" href="node_modules/vue-flip/dist/vueFlip.css">
-  <vue-flip></vue-flip>
-  <script src="https://unpkg.com/vue"></script>
-  <script type="text/javascript" src="node_modules/vue-flip/dist/vueFlip.common.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="./vueFlip.umd.js"></script>
+<style>
+    .front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #673AB7;
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
 
-  <script>
-      new Vue({
-        components: {
-          vueFlip
-        }
-      }).$mount('#app')
-</script>
+  .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFC107;
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<div id="app">
+  <vue-flip :active-hover="true" width="200px" height="50px">
+    <template v-slot:front class="front">
+      front
+    </template>
+    <template v-slot:back class="back">
+      back
+    </template>
+  </vue-flip>
+</div>
+
+<script>
+new Vue({
+  components: {
+    'vue-flip': vueFlip
+  }
+}).$mount('#app')
 ```
 ## Module
 
