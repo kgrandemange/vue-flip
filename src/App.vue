@@ -104,20 +104,26 @@
     </code></pre>
 
     <hr />
-   
+
     <pairs />
+
+    <hr />
+
+    <flip-cards />
   </div>
 </template>
 
 <script>
   import vueFlip from './components/Flip'
   import Pairs from './components/Pairs'
+  import FlipCards from './components/FlipCards'
 
   export default {
     name: 'app',
     components: {
       vueFlip,
-      Pairs
+      Pairs,
+      FlipCards
     },
     data: () => {
       return {
@@ -135,14 +141,14 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
   :root {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   h1 {
-    font-weight: 200;
+    font-weight: 300;
   }
 
   .front {
