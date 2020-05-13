@@ -6,7 +6,7 @@
     </header>
     <section>
       <h1>Simple Example (hover)</h1>
-      <vue-flip :active-hover="true" width="200px" height="50px">
+      <vue-flip active-hover width="200px" height="50px">
         <template v-slot:front class="front">
           front
         </template>
@@ -15,7 +15,7 @@
         </template>
       </vue-flip>
       <pre v-highlightjs><code class="html">
-        &lt;vue-flip :active-hover="true" width="200px" height="50px"&gt;
+        &lt;vue-flip active-hover width="200px" height="50px"&gt;
           &lt;template v-slot:front class="front"&gt;
             front
           &lt;/template&gt;
@@ -26,7 +26,7 @@
       </code></pre>
 
       <h1>Simple Example (click)</h1>
-      <vue-flip :active-click="true" width="200px" height="50px">
+      <vue-flip active-click width="200px" height="50px">
         <template v-slot:front class="front">
           front
         </template>
@@ -35,7 +35,7 @@
         </template>
       </vue-flip>
       <pre v-highlightjs><code class="html">
-        &lt;vue-flip :active-click="true" width="200px" height="50px"&gt;
+        &lt;vue-flip active-click width="200px" height="50px"&gt;
           &lt;template v-slot:front class="front"&gt;
             front
           &lt;/template&gt;
@@ -48,7 +48,7 @@
       <hr/>
 
       <h1>Example with transition property</h1>
-      <vue-flip :active-hover="true" width="200px" height="50px" transition="2s">
+      <vue-flip active-hover width="200px" height="50px" transition="2s">
         <template v-slot:front class="front">
           front
         </template>
@@ -57,7 +57,7 @@
         </template>
       </vue-flip>
       <pre v-highlightjs><code class="html">
-        &lt;vue-flip :active-hover="true" width="200px" height="50px" transition="2s"&gt;
+        &lt;vue-flip active-hover width="200px" height="50px" transition="2s"&gt;
           &lt;template v-slot:front class="front"&gt;
             front
           &lt;/template&gt;
@@ -69,7 +69,7 @@
       <hr/>
 
       <h1>Flip card programmatically</h1>
-      <vue-flip :active-hover="true" width="200px" height="50px" class="simple-test" v-model="model">
+      <vue-flip active-hover width="200px" height="50px" class="simple-test" v-model="model">
         <template v-slot:front class="front">
           front
         </template>
@@ -82,7 +82,7 @@
         <button @click="model=!model">Click</button>
       </div>
       <pre v-highlightjs><code class="html">
-        &lt;vue-flip :active-hover="true" width="200px" height="50px" class="simple-test" v-model="model"&gt;
+        &lt;vue-flip active-hover width="200px" height="50px" class="simple-test" v-model="model"&gt;
         &lt;template v-slot:front class="front"&gt;
           front
         &lt;/template&gt;
