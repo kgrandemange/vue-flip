@@ -3,7 +3,7 @@
 
 # vue-flip
 
-A vue component that shows a flip component.
+A component to flip elements.
 
 ## Demo
 
