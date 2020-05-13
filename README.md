@@ -49,7 +49,7 @@ Include the script file:
 </style>
 
 <div id="app">
-  <vue-flip :active-hover="true" width="200px" height="50px">
+  <vue-flip active-hover width="200px" height="50px">
     <template v-slot:front class="front">
       front
     </template>
@@ -65,6 +65,7 @@ new Vue({
     'vue-flip': vueFlip
   }
 }).$mount('#app')
+</script>
 ```
 ## Module
 
@@ -101,13 +102,13 @@ Use this template:
 You can active the flip on the click with:
 
 ```vue
-<vue-flip active-click="true"></vue-flip>
+<vue-flip active-click></vue-flip>
 ```
 
 or you can active on the hover with:
 
 ```vue
-<vue-flip active-hover="true"></vue-flip>
+<vue-flip active-hover></vue-flip>
 ```
 
 or you can bind with a variable:
