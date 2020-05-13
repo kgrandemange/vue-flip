@@ -27,9 +27,9 @@ jobs:
     - run: npm run build:demo
     - name: Deploy
       if: success()
-      uses: crazy-max/ghaction-github-pages@v1
+      uses: crazy-max/ghaction-github-pages@v2
       with:
         target_branch: master
         build_dir: .
       env:
-        GITHUB_PAT: ${{ secrets.PAT }}
+        GH_PAT: ${{ secrets.PAT }}
