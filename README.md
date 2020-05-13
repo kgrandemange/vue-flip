@@ -1,5 +1,9 @@
-
-![Test](https://github.com/kgrandemange/vue-flip/workflows/Test/badge.svg)
+<p>
+  <img alt="Test" src="https://github.com/kgrandemange/vue-flip/workflows/Test/badge.svg" />
+  <a href="https://www.npmjs.com/package/vue-flip"><img src="https://badge.fury.io/js/vue-flip.svg" alt="npm badge"/></a>
+  <a href="https://npmcharts.com/compare/vue-flip?minimal=true"><img src="https://img.shields.io/npm/dm/vue-flip.svg?style=flat" alt="NPM Downloads"/></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT badge"/></a>
+</p>
 
 # vue-flip
 
