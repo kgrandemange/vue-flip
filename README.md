@@ -31,7 +31,7 @@ Include the script file:
 <script src="https://unpkg.com/vue"></script>
 <script src="./vueFlip.umd.js"></script>
 <style>
-    .front {
+  .front {
     display: flex;
     align-items: center;
     justify-content: center;
