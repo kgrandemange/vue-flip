@@ -9,6 +9,10 @@
 
 A component to flip elements.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kgrandemange/vue-flip/master/.github/screenshots/screen.gif" alt="vue-flip example"/>
+</p>
+
 ## Demo
 
 [Here](https://kgrandemange.github.io/vue-flip/)
