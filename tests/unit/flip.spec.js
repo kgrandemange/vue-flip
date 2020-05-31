@@ -36,7 +36,7 @@ describe('Flip.vue', () => {
     expect(wrapper.classes()).toContain('active-hover')
   })
 
-  it('does not have active-hover class when activeHover props is set to true', () => {
+  it('does not have active-hover class when activeHover props is set to false', () => {
     const wrapper = shallowMount(Flip, {
       propsData: {
         width: '100px',
