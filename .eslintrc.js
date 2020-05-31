@@ -9,7 +9,10 @@ module.exports = {
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-dupe-else-if': true,
+    'no-import-assign': true,
+    'no-setter-return': true
   },
   parserOptions: {
     parser: 'babel-eslint'
