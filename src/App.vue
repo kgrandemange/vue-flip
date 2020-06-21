@@ -69,7 +69,7 @@
       <hr/>
 
       <h1>Flip card programmatically</h1>
-      <vue-flip active-hover width="200px" height="50px" class="simple-test" v-model="model">
+      <vue-flip active-click width="200px" height="50px" class="simple-test" v-model="model">
         <template v-slot:front class="front">
           front
         </template>
