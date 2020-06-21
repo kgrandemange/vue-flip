@@ -75,6 +75,11 @@
         }
       }
     },
+    mounted () {
+      if (this.value) {
+        this.hover = this.value
+      }
+    },
     watch: {
       value (value) {
         this.hover = value

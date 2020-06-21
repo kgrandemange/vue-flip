@@ -148,4 +148,16 @@ describe('Flip.vue', () => {
 
     expect(wrapper.vm.$data.hover).toBe(false)
   })
+
+  it('show back card when v-model is set to true', () => {
+    const wrapper = shallowMount(Flip, {
+      propsData: {
+        width: '100px',
+        height: '100px',
+        value: true
+      }
+    })
+
+    expect(wrapper.vm.$data.hover).toBe(true)
+  })
 })
