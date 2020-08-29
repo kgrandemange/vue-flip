@@ -14,16 +14,18 @@
           back
         </template>
       </vue-flip>
-      <pre v-highlightjs><code class="html">
-        &lt;vue-flip active-hover width="200px" height="50px"&gt;
-          &lt;template v-slot:front class="front"&gt;
+      <pre v-prism>
+        <code>
+        <div :active-hover="true" width="200px" height="50px">
+          <p class="front">
             front
-          &lt;/template&gt;
-          &lt;template v-slot:back class="back"&gt;
+          </p>
+          <p class="back">
             back
-          &lt;/template&gt;
-        &lt;/vue-flip&gt;
-      </code></pre>
+          </p>
+        </div>
+        </code>
+      </pre>
 
       <h1>Simple Example (click)</h1>
       <vue-flip active-click width="200px" height="50px">
@@ -34,16 +36,18 @@
           back
         </template>
       </vue-flip>
-      <pre v-highlightjs><code class="html">
-        &lt;vue-flip active-click width="200px" height="50px"&gt;
-          &lt;template v-slot:front class="front"&gt;
+      <pre v-prism>
+        <code>
+        <div active-click width="200px" height="50px">
+          <p class="front">
             front
-          &lt;/template&gt;
-          &lt;template v-slot:back class="back"&gt;
+          </p>
+          <p class="back">
             back
-          &lt;/template&gt;
-        &lt;/vue-flip&gt;
-      </code></pre>
+          </p>
+        </div>
+        </code>
+      </pre>
 
       <hr/>
 
@@ -56,16 +60,18 @@
           back
         </template>
       </vue-flip>
-      <pre v-highlightjs><code class="html">
-        &lt;vue-flip active-hover width="200px" height="50px" transition="2s"&gt;
-          &lt;template v-slot:front class="front"&gt;
+      <pre v-prism>
+        <code>
+        <div active-hover width="200px" height="50px" transition="2s">
+          <p class="front">
             front
-          &lt;/template&gt;
-          &lt;template v-slot:back class="back"&gt;
+          </p>
+          <p class="back">
             back
-          &lt;/template&gt;
-        &lt;/vue-flip&gt;
-      </code></pre>
+          </p>
+        </div>
+        </code>
+      </pre>
       <hr/>
 
       <h1>Flip card programmatically</h1>
@@ -81,32 +87,59 @@
         <span style="margin-inline-end: 10px">{{ model }}</span>
         <button @click="model=!model">Click</button>
       </div>
-      <pre v-highlightjs><code class="html">
-        &lt;vue-flip active-hover width="200px" height="50px" class="simple-test" v-model="model"&gt;
-        &lt;template v-slot:front class="front"&gt;
-          front
-        &lt;/template&gt;
-        &lt;template v-slot:back class="back"&gt;
-          back
-        &lt;/template&gt;
-      &lt;/vue-flip&gt;
-        &lt;div style="margin: 10px"&gt;
-          &lt;span style="margin-inline-end: 10px"&gt;{{ model }}&lt;/span&gt;
-          &lt;button @click="model=!model"&gt;Click&lt;/button&gt;
-        &lt;/div&gt;
-        &lt;/code&gt;&lt;/pre&gt;
-        &lt;hr/&gt;
-
-        &lt;h1&gt;Flip one time&lt;/h1&gt;
-        &lt;vue-flip v-model="model2" class="simple-test" width="20%" height="50px"&gt;
-          &lt;template v-slot:front class="front"&gt;
-            &lt;div style="display:flex; align-items: center; justify-content: center; height:100%; width:100%" @click="handleClick"&gt;disable me!&lt;/div&gt;
-          &lt;/template&gt;
-          &lt;template v-slot:back class="back"&gt;
+      <pre v-prism>
+        <code>
+        <div active-hover width="200px" height="50px" class="simple-test" model="model">
+          <p class="front">
+            front
+          </p>
+          <p class="back">
             back
-          &lt;/template&gt;
-        &lt;/vue-flip&gt;
-      </code></pre>
+          </p>
+        </div>
+        <div style="margin: 10px">
+          <span style="margin-inline-end: 10px">{{ model }}</span>
+          <button @click="model=!model">Click</button>
+        </div>
+        </code>
+      </pre>
+
+      <hr/>
+
+      <h1>Flip one time</h1>
+      <vue-flip v-model="model2" class="simple-test" width="20%" height="50px">
+        <template v-slot:front class="front">
+          <span style="display:flex; align-items: center; justify-content: center; height:100%; width:100%" @click="handleClick">disable me!</span>
+        </template>
+        <template v-slot:back class="back">
+          back
+        </template>
+      </vue-flip>
+
+      <pre v-prism>
+        <code>
+        <div model="model2" class="simple-test" width="20%" height="50px">
+          <p class="front">
+            <span style="display:flex; align-items: center; justify-content: center; height:100%; width:100%" @click="handleClick">disable me!</span>
+          </p>
+          <p class="back">
+            back
+          </p>
+        </div>
+        </code>
+      </pre>
+
+      <pre v-prism="'javascript'">
+        <code>
+          export default {
+            methods: {
+              handleClick () {
+                this.model2 = true
+              }
+            }
+          }
+        </code>
+      </pre>
 
       <hr />
 

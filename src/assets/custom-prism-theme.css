@@ -1,0 +1,10 @@
+pre {
+  padding: 1rem 0;
+  background-color: #251a35;
+  color: white;
+  overflow: auto;
+}
+
+.token.tag, .token.attr-name, .token.namespace, .token.deleted {
+  color: #e66569;
+}
