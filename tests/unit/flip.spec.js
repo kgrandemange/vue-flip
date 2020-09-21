@@ -1,10 +1,10 @@
-import { shallowMount } from '@vue/test-utils'
-import Flip from '@/components/Flip.vue'
+import Flip from '../../src/components/Flip.vue'
+import { shallowMount, mount } from '@vue/test-utils'
 
 describe('Flip.vue', () => {
   it('has height', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px'
       }
@@ -15,7 +15,7 @@ describe('Flip.vue', () => {
 
   it('has width', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px'
       }
@@ -26,7 +26,7 @@ describe('Flip.vue', () => {
 
   it('has active-hover class when activeHover props is set to true', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px',
         activeHover: true
@@ -38,7 +38,7 @@ describe('Flip.vue', () => {
 
   it('does not have active-hover class when activeHover props is set to false', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px',
         activeHover: false
@@ -50,7 +50,7 @@ describe('Flip.vue', () => {
 
   it('has default transition', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px'
       }
@@ -61,7 +61,7 @@ describe('Flip.vue', () => {
 
   it('has custom transition', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px',
         transition: '1s'
@@ -73,7 +73,7 @@ describe('Flip.vue', () => {
 
   it('has empty default front slot', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px'
       }
@@ -83,22 +83,24 @@ describe('Flip.vue', () => {
   })
 
   it('set front slot in front element', () => {
-    const wrapper = shallowMount(Flip, {
-      propsData: {
+    const wrapper = mount(Flip, {
+      props: {
         width: '100px',
         height: '100px'
       },
-      scopedSlots: {
+      slots: {
         front: '<div>front slot</div>'
       }
     })
 
+    console.log('COUCOU')
+    console.log(wrapper.text())
     expect(wrapper.find('.front').text()).toBe('front slot')
   })
 
   it('has empty default back slot', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px'
       }
@@ -108,12 +110,12 @@ describe('Flip.vue', () => {
   })
 
   it('set back slot in front element', () => {
-    const wrapper = shallowMount(Flip, {
-      propsData: {
+    const wrapper = mount(Flip, {
+      props: {
         width: '100px',
         height: '100px'
       },
-      scopedSlots: {
+      slots: {
         back: '<div>back slot</div>'
       }
     })
@@ -123,7 +125,7 @@ describe('Flip.vue', () => {
 
   it('flips card on a click when activeClick is set to true', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px',
         activeClick: true
@@ -137,7 +139,7 @@ describe('Flip.vue', () => {
 
   it('does not flip card on a click when activeClick is set to true', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px',
         activeClick: false
@@ -151,7 +153,7 @@ describe('Flip.vue', () => {
 
   it('show back card when v-model is set to true', () => {
     const wrapper = shallowMount(Flip, {
-      propsData: {
+      props: {
         width: '100px',
         height: '100px',
         value: true

@@ -152,31 +152,32 @@
   </div>
 </template>
 
-<script>
-  import vueFlip from './components/Flip'
-  import Pairs from './components/Pairs'
-  import FlipCards from './components/FlipCards'
+<script lang="ts">
+import { defineComponent } from 'vue'
+import vueFlip from './components/Flip.vue'
+import Pairs from './components/Pairs.vue'
+import FlipCards from './components/FlipCards.vue'
 
-  export default {
-    name: 'app',
-    components: {
-      vueFlip,
-      Pairs,
-      FlipCards
-    },
-    data: () => {
-      return {
-        model: false,
-        model2: false,
-        model3: false
-      }
-    },
-    methods: {
-      handleClick () {
-        this.model2 = true
-      }
+export default defineComponent({
+  name: 'app',
+  components: {
+    vueFlip,
+    Pairs,
+    FlipCards
+  },
+  data: () => {
+    return {
+      model: false,
+      model2: false,
+      model3: false
+    }
+  },
+  methods: {
+    handleClick () {
+      this.model2 = true
     }
   }
+})
 </script>
 
 <style>

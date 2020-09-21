@@ -1,9 +1,11 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import './directives/prism.ts'
+import prism from './directives/prism'
 
-Vue.config.productionTip = false
+const app = createApp(App)
+app.directive('prism', prism)
+app.mount('#app')
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+export {
+  app
+}

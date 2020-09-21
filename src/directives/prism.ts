@@ -1,10 +1,11 @@
-import Vue from 'vue'
+import Vue, { DirectiveBinding } from 'vue'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import '../assets/custom-prism-theme.css'
+import { app } from '../main'
 
-Vue.directive('prism', {
-  inserted (el, binding) {
+export default {
+  beforeMount(el: HTMLElement, binding: DirectiveBinding) {
     // TODO: check if el contains pre and code element.
     const elementDOM = el.children[0].children[0] || el.children[0]
     let hightlightDOM = Prism.highlight(elementDOM.outerHTML, Prism.languages[binding.value || 'html'] , binding.value || 'html')
@@ -21,4 +22,4 @@ Vue.directive('prism', {
 
     el.children[0].outerHTML = hightlightDOM
   }
-})
+}

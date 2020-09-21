@@ -1,7 +1,7 @@
 <template>
   <div class="pairs">
     <h1>Use case: Pairs</h1>
-      <vue-flip v-for="(item, $index) in deck" :key="$index" width="120px" height="200px" class="card" v-model="item.flipped" @click.native="handleClick(item)">
+      <vue-flip v-for="(item, $index) in deck" :key="$index" width="120px" height="200px" class="card" v-model="item.flipped" @click="handleClick(item)">
       <template v-slot:front>
         <div :class="{ 'found': item.found }" class="front">
           {{ item.found ? '✔️' : '?' }}
@@ -14,19 +14,26 @@
   </div>
 </template>
 
-<script>
-import VueFlip from '@/components/Flip'
+<script lang="ts">
+import { defineComponent } from 'vue'
+import VueFlip from './Flip.vue'
+
+interface Card {
+  value: string
+  flipped: boolean
+  found: boolean
+}
 
 let i = 0
-export default {
+export default defineComponent({
   name: 'Pairs',
   components: {
     VueFlip
   },
   data () {
     return {
-      deck: [],
-      cardSelected: []
+      deck: [] as Array<Card>,
+      cardSelected: [] as Array<Card>
     }
   },
   created () {
@@ -41,7 +48,7 @@ export default {
     }).sort(() => 0.5 - Math.random())
   },
   methods: {
-    handleClick (card) {
+    handleClick (card: Card) {
       if (!card.found && !card.flipped) {
         if (this.cardSelected.length < 2) {
           card.flipped = true
@@ -63,7 +70,7 @@ export default {
       }
     }
   }
-}
+})
 </script>
 
 <style scoped>
