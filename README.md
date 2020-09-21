@@ -20,9 +20,9 @@ A component to flip elements.
 
 ## Installation
 
-`npm i vue-flip`
+`npm i vue-flip@^1.0.2`
 
-`yarn add vue-flip`
+`yarn add vue-flip@^1.0.2`
 
 ## Browser
 
