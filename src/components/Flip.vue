@@ -45,7 +45,7 @@ import { defineComponent, h } from 'vue'
         h(
           'div', {
             class: 'flipper',
-            style: this.transition
+            style: `transition: ${this.transition}`
           },
           [
             h(
