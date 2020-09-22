@@ -154,7 +154,7 @@ describe('Flip.vue', () => {
       props: {
         width: '100px',
         height: '100px',
-        value: true
+        modelValue: true
       }
     })
 
