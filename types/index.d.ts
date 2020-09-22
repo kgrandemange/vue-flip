@@ -1,3 +1,3 @@
 import { VueConstructor } from "vue";
 
-export const Flip: VueConstructor;
+export const VueFlip: VueConstructor;
