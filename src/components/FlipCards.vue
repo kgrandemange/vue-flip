@@ -17,8 +17,9 @@
 
 <script>
 import VueFlip from '@/components/Flip'
+import { defineComponent } from 'vue'
 
-export default {
+export default  defineComponent({
   components: {
     VueFlip
   },
@@ -45,7 +46,7 @@ export default {
       }, 100)
     }
   }
-}
+})
 </script>
 
 <style scoped>

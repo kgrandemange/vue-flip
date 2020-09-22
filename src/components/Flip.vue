@@ -21,9 +21,9 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
+import { defineComponent } from 'vue'
 
-  export default Vue.extend({
+  export default defineComponent({
     name: 'flip',
     props: {
       activeClick: {
@@ -49,7 +49,7 @@
         required: false,
         default: '0.5s'
       },
-      value: {
+      modelValue: {
         type: Boolean,
         required: false
       }
@@ -63,27 +63,27 @@
       handleClick () {
         if (this.activeClick) {
           this.hover = !this.hover
-          this.$emit('input', this.hover)
+          this.$emit('update:modelValue', this.hover)
         }
       },
       handleMouseout () {
         if (this.activeHover) {
-          this.$emit('input', false)
+          this.$emit('update:modelValue', false)
         }
       },
       handleMouseover () {
         if (this.activeHover) {
-          this.$emit('input', true)
+          this.$emit('update:modelValue', true)
         }
       }
     },
     mounted () {
-      if (this.value) {
-        this.hover = this.value
+      if (this.modelValue) {
+        this.hover = this.modelValue
       }
     },
     watch: {
-      value (value) {
+      modelValue (value) {
         this.hover = value
       }
     }

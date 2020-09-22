@@ -6,7 +6,7 @@
   <img alt="build & deploy docs" src="https://github.com/kgrandemange/vue-flip/workflows/build%20&%20deploy%20docs/badge.svg" />
 </p>
 
-# vue-flip
+# vue-flip (Vue.js 3 version)
 
 A component to flip elements.
 
