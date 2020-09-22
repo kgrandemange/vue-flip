@@ -1,27 +1,5 @@
-<template>
-  <div class="flip-container"
-       :class="{ 'active-hover': activeHover, 'hover': hover }"
-       :style="{ width: width, height: height }"
-       @click="handleClick"
-       @mouseover="handleMouseover"
-       @mouseout="handleMouseout"
-  >
-    <div
-      class="flipper"
-      :style="{ transition }"
-    >
-      <div class="front">
-        <slot name="front" />
-      </div>
-      <div class="back">
-        <slot name="back" />
-      </div>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, h } from 'vue'
 
   export default defineComponent({
     name: 'flip',
@@ -53,6 +31,40 @@ import { defineComponent } from 'vue'
         type: Boolean,
         required: false
       }
+    },
+    render () {
+      return h(
+        'div',
+        {
+          class: `flip-container ${this.activeHover ? 'active-hover ' : ''}${this.hover ? 'hover' : ''}`,
+          style: `width: ${this.width}; height: ${this.height}`,
+          onClick: this.handleClick,
+          onMouseOver: this.handleMouseover,
+          onMouseOut: this.handleMouseout,
+        },
+        h(
+          'div', {
+            class: 'flipper',
+            style: this.transition
+          },
+          [
+            h(
+              'div',
+              {
+                class: 'front'
+              },
+              this.$slots.front ? this.$slots.front() : ''
+            ),
+            h(
+              'div',
+              {
+                class: 'back'
+              },
+              this.$slots.back ? this.$slots.back() : ''
+            )
+          ]
+        )
+      )
     },
     data () {
       return {
