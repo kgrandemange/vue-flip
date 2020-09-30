@@ -48,7 +48,7 @@ export default defineComponent({
       h(
         'div', {
           class: 'flipper',
-          style: `transition: ${this.transition}`
+          style: `transition-duration: ${this.transition}`
         },
         [
           h(

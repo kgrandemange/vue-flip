@@ -56,7 +56,7 @@ describe('Flip.vue', () => {
       }
     })
 
-    expect(wrapper.find('.flipper').attributes('style')).toContain('transition: 0.5s')
+    expect(wrapper.find('.flipper').attributes('style')).toContain('transition-duration: 0.5s')
   })
 
   it('has custom transition', () => {
@@ -68,7 +68,7 @@ describe('Flip.vue', () => {
       }
     })
 
-    expect(wrapper.find('.flipper').attributes('style')).toContain('transition: 1s')
+    expect(wrapper.find('.flipper').attributes('style')).toContain('transition-duration: 1s')
   })
 
   it('has empty default front slot', () => {
