@@ -1,0 +1,81 @@
+# Changelog
+
+## [2.1.0](https://github.com/kgrandemange/vue-flip/tree/2.1.0) (2020-09-30)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/2.0.0...2.1.0)
+
+## [2.0.0](https://github.com/kgrandemange/vue-flip/tree/2.0.0) (2020-09-21)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/1.0.2...2.0.0)
+
+**Closed issues:**
+
+- `v-model` not respected for initial state [\#23](https://github.com/kgrandemange/vue-flip/issues/23)
+
+**Merged pull requests:**
+
+- chore\(deps\): bump elliptic from 6.5.2 to 6.5.3 [\#25](https://github.com/kgrandemange/vue-flip/pull/25) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore\(deps\): bump lodash from 4.17.15 to 4.17.19 [\#24](https://github.com/kgrandemange/vue-flip/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [1.0.2](https://github.com/kgrandemange/vue-flip/tree/1.0.2) (2020-06-21)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/1.0.1...1.0.2)
+
+## [1.0.1](https://github.com/kgrandemange/vue-flip/tree/1.0.1) (2020-05-31)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/1.0.0...1.0.1)
+
+## [1.0.0](https://github.com/kgrandemange/vue-flip/tree/1.0.0) (2020-05-15)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/0.4.4...1.0.0)
+
+**Fixed bugs:**
+
+- CSS file missing or example error. [\#21](https://github.com/kgrandemange/vue-flip/issues/21)
+- Can't disable flip on click [\#20](https://github.com/kgrandemange/vue-flip/issues/20)
+
+## [0.4.4](https://github.com/kgrandemange/vue-flip/tree/0.4.4) (2020-05-02)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/0.4.3...0.4.4)
+
+## [0.4.3](https://github.com/kgrandemange/vue-flip/tree/0.4.3) (2020-04-16)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/0.4.2...0.4.3)
+
+**Fixed bugs:**
+
+- Following the Readme.md but its not working [\#19](https://github.com/kgrandemange/vue-flip/issues/19)
+
+## [0.4.2](https://github.com/kgrandemange/vue-flip/tree/0.4.2) (2020-04-14)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/0.4.1...0.4.2)
+
+## [0.4.1](https://github.com/kgrandemange/vue-flip/tree/0.4.1) (2019-12-20)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/0.4.0...0.4.1)
+
+## [0.4.0](https://github.com/kgrandemange/vue-flip/tree/0.4.0) (2019-12-20)
+
+[Full Changelog](https://github.com/kgrandemange/vue-flip/compare/1697af0765c260c31be78be3b59a6b236cce85cc...0.4.0)
+
+**Closed issues:**
+
+- License? [\#16](https://github.com/kgrandemange/vue-flip/issues/16)
+- Height problem [\#14](https://github.com/kgrandemange/vue-flip/issues/14)
+- repair readme [\#12](https://github.com/kgrandemange/vue-flip/issues/12)
+- /src and /dist not synchronised in v0.2.5 [\#11](https://github.com/kgrandemange/vue-flip/issues/11)
+- Try to install into a NuxtJs project, but show both flip sides [\#8](https://github.com/kgrandemange/vue-flip/issues/8)
+- Should have a way to flip from a child element [\#7](https://github.com/kgrandemange/vue-flip/issues/7)
+- disable click on back [\#3](https://github.com/kgrandemange/vue-flip/issues/3)
+- Front with img responsive [\#2](https://github.com/kgrandemange/vue-flip/issues/2)
+- integration VueFlip in Main.ts [\#1](https://github.com/kgrandemange/vue-flip/issues/1)
+
+**Merged pull requests:**
+
+- Fixed chrome support : backface-visibility bug [\#15](https://github.com/kgrandemange/vue-flip/pull/15) ([GunnarPDX](https://github.com/GunnarPDX))
+- chore\(deps\): bump lodash from 4.17.11 to 4.17.14 [\#13](https://github.com/kgrandemange/vue-flip/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore\(deps\): bump lodash from 4.17.10 to 4.17.11 [\#10](https://github.com/kgrandemange/vue-flip/pull/10) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Feature to flip the card programmatically [\#9](https://github.com/kgrandemange/vue-flip/pull/9) ([chaymankala](https://github.com/chaymankala))
+- Extend browser support with vendor prefixes [\#6](https://github.com/kgrandemange/vue-flip/pull/6) ([VitorLuizC](https://github.com/VitorLuizC))
+- Update README.md [\#5](https://github.com/kgrandemange/vue-flip/pull/5) ([jofftiquez](https://github.com/jofftiquez))
+- Update README.md [\#4](https://github.com/kgrandemange/vue-flip/pull/4) ([jofftiquez](https://github.com/jofftiquez))
