@@ -1,6 +1,6 @@
 {
   "name": "vue-flip",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "private": false,
   "description": "A component to flip elements",
   "scripts": {
