@@ -23,7 +23,7 @@ export function validateHeight(width: string): boolean {
 }
 
 export function validateTransitionDuration(time: string) {
-  if ((/s$/i).test(time)) {
+  if ((/[0-9]s$/i).test(time)) {
     return !isNaN(parseFloat(time.slice(0, -1)))
   }
 
