@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, h } from 'vue'
-import { validateWidth, validateHeight } from '../assets/js/validator'
+import { validateWidth, validateHeight, validateTransitionDuration } from '../assets/js/validator'
 
 export default defineComponent({
   name: 'flip',
@@ -28,7 +28,8 @@ export default defineComponent({
     transition: {
       type: String,
       required: false,
-      default: '0.5s'
+      default: '0.5s',
+      validator: validateTransitionDuration
     },
     modelValue: {
       type: Boolean,

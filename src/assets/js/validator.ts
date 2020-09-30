@@ -21,3 +21,14 @@ export function validateWidth(width: string): boolean {
 export function validateHeight(width: string): boolean {
   return validateSize(width)
 }
+
+export function validateTransitionDuration(time: string) {
+  if ((/s$/i).test(time)) {
+    return !isNaN(parseFloat(time.slice(0, -1)))
+  }
+
+  if ((/(ms)$/i).test(time)) {
+    return !isNaN(parseFloat(time.slice(0, -2)))
+  }
+  return time === '0'
+}
