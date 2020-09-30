@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent, h } from 'vue'
+import { validateWidth, validateHeight } from '../assets/js/validator'
 
 export default defineComponent({
   name: 'flip',
@@ -16,11 +17,13 @@ export default defineComponent({
     },
     width: {
       type: String,
-      required: true
+      required: true,
+      validator: validateWidth
     },
     height: {
       type: String,
-      required: true
+      required: true,
+      validator: validateHeight
     },
     transition: {
       type: String,
