@@ -1,5 +1,6 @@
 import Flip from '../../src/components/Flip.vue'
 import { shallowMount, mount } from '@vue/test-utils'
+import { ref } from 'vue'
 
 describe('Flip.vue', () => {
   it('has height', () => {
@@ -130,12 +131,13 @@ describe('Flip.vue', () => {
       }
     })
 
-    wrapper.trigger('click')
+    expect(wrapper.vm.$data.hover).toBe(false)
 
+    wrapper.trigger('click')
     expect(wrapper.vm.$data.hover).toBe(true)
   })
 
-  it('does not flip card on a click when activeClick is set to true', () => {
+  it('does not flip card on a click when activeClick is set to false', () => {
     const wrapper = shallowMount(Flip, {
       props: {
         width: '100px',
@@ -144,9 +146,50 @@ describe('Flip.vue', () => {
       }
     })
 
+    expect(wrapper.vm.$data.hover).toBe(false)
+
     wrapper.trigger('click')
+    expect(wrapper.vm.$data.hover).toBe(false)
+  })
+
+  it('update modelValue on a mouseover event when activeHover is set to true', async () => {
+    const wrapper = shallowMount(Flip, {
+      props: {
+        width: '100px',
+        height: '100px',
+        activeHover: true
+      }
+    })
 
     expect(wrapper.vm.$data.hover).toBe(false)
+
+    wrapper.trigger('mouseover')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted()['update:modelValue']).toBeTruthy()
+
+    wrapper.trigger('mouseout')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted()['update:modelValue']).toEqual([[true], [false]])
+  })
+
+  it('does not update modelValue on a click when activeHover is set to false', async () => {
+    const wrapper = shallowMount(Flip, {
+      props: {
+        width: '100px',
+        height: '100px',
+        activeHover: false
+      }
+    })
+
+    expect(wrapper.vm.$data.hover).toBe(false)
+
+    wrapper.trigger('mouseover')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted()['update:modelValue']).toBeFalsy()
+
+    wrapper.trigger('mouseout')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted()['update:modelValue']).toBeFalsy()
   })
 
   it('show back card when v-model is set to true', () => {
@@ -159,5 +202,21 @@ describe('Flip.vue', () => {
     })
 
     expect(wrapper.vm.$data.hover).toBe(true)
+  })
+
+  it('show back card when v-model is set to true', async () => {
+    const value = ref(false)
+    const wrapper = shallowMount(Flip, {
+      props: {
+        width: '100px',
+        height: '100px',
+        modelValue: value
+      }
+    })
+
+    expect(wrapper.vm.hover).toBe(false)
+    value.value = true
+    await wrapper.vm.$nextTick()
+    expect(wrapper.vm.hover).toBe(true)
   })
 })
