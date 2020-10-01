@@ -2,22 +2,22 @@ import { validateTransitionDuration } from '../../src/assets/js/validator'
 
 describe('Size validator', () => {
   it('can be equal to 0', () => {
-    expect(validateTransitionDuration('0')).toBeTruthy();
+    expect(validateTransitionDuration('0')).toBe(true);
   })
 
   it('can be equal to s value', () => {
-    expect(validateTransitionDuration('10s')).toBeTruthy()
+    expect(validateTransitionDuration('10s')).toBe(true)
   })
 
   it('can not be "1s2" value', () => {
-    expect(validateTransitionDuration('1s2')).toBeFalsy()
+    expect(validateTransitionDuration('1s2')).toBe(false)
   })
 
   it('can be equal to ms value', () => {
-    expect(validateTransitionDuration('10ms')).toBeTruthy()
+    expect(validateTransitionDuration('10ms')).toBe(true)
   })
 
   it('can not be "1ms2" value', () => {
-    expect(validateTransitionDuration('1ms2')).toBeFalsy()
+    expect(validateTransitionDuration('1ms2')).toBe(false)
   })
 })
