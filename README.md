@@ -4,6 +4,9 @@
   <a href="https://npmcharts.com/compare/vue-flip?minimal=true"><img src="https://img.shields.io/npm/dm/vue-flip.svg?style=flat" alt="NPM Downloads"/></a>
   <a href="https://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT badge"/></a>
   <img alt="build & deploy docs" src="https://github.com/kgrandemange/vue-flip/workflows/build%20&%20deploy%20docs/badge.svg" />
+  <a href="https://codecov.io/gh/kgrandemange/vue-flip">
+    <img src="https://codecov.io/gh/kgrandemange/vue-flip/branch/master/graph/badge.svg?token=JER4YOD5E4"/>
+  </a>
 </p>
 
 # vue-flip
