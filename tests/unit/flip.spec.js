@@ -219,4 +219,29 @@ describe('Flip.vue', () => {
     await wrapper.vm.$nextTick()
     expect(wrapper.vm.hover).toBe(true)
   })
+
+  it('flip on hover event and then flip back on click event when activeHover and activeClick are set to true', async () => {
+    const wrapper = shallowMount(Flip, {
+      props: {
+        width: '100px',
+        height: '100px',
+        activeHover: true,
+        activeClick: true
+      }
+    })
+
+    expect(wrapper.vm.$data.hover).toBe(false)
+
+    wrapper.trigger('mouseenter')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted()['update:modelValue']).toBeTruthy()
+
+    wrapper.trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted()['update:modelValue']).toEqual([[true], [false]])
+
+    wrapper.trigger('mouseleave')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted()['update:modelValue']).toEqual([[true], [false], [true]])
+  })
 })
