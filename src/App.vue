@@ -28,7 +28,29 @@
       </pre>
 
       <h1>Simple Example (click)</h1>
-      <vue-flip active-click width="200px" height="50px">
+      <vue-flip :active-click="true" width="200px" height="50px">
+        <template v-slot:front class="front">
+          front
+        </template>
+        <template v-slot:back class="back">
+          back
+        </template>
+      </vue-flip>
+      <pre v-prism>
+        <code>
+        <div active-click width="200px" height="50px">
+          <p class="front">
+            front
+          </p>
+          <p class="back">
+            back
+          </p>
+        </div>
+        </code>
+      </pre>
+
+      <h1>Simple Example (click & hover)</h1>
+      <vue-flip :active-click="true" :activeHover="true" width="200px" height="50px">
         <template v-slot:front class="front">
           front
         </template>
@@ -62,7 +84,7 @@
       </vue-flip>
       <pre v-prism>
         <code>
-        <div active-hover width="200px" height="50px" transition="2s">
+        <div :active-hover="true" width="200px" height="50px" transition="2s">
           <p class="front">
             front
           </p>
@@ -89,7 +111,7 @@
       </div>
       <pre v-prism>
         <code>
-        <div active-hover width="200px" height="50px" class="simple-test" model="model">
+        <div :active-hover="true" width="200px" height="50px" class="simple-test" model="model">
           <p class="front">
             front
           </p>

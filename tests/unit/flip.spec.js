@@ -152,7 +152,7 @@ describe('Flip.vue', () => {
     expect(wrapper.vm.$data.hover).toBe(false)
   })
 
-  it('update modelValue on a mouseover event when activeHover is set to true', async () => {
+  it('update modelValue on a mouseenter event when activeHover is set to true', async () => {
     const wrapper = shallowMount(Flip, {
       props: {
         width: '100px',
@@ -163,11 +163,11 @@ describe('Flip.vue', () => {
 
     expect(wrapper.vm.$data.hover).toBe(false)
 
-    wrapper.trigger('mouseover')
+    wrapper.trigger('mouseenter')
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted()['update:modelValue']).toBeTruthy()
 
-    wrapper.trigger('mouseout')
+    wrapper.trigger('mouseleave')
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted()['update:modelValue']).toEqual([[true], [false]])
   })

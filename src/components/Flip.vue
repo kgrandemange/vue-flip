@@ -43,8 +43,8 @@ export default defineComponent({
         class: `flip-container ${this.activeHover ? 'active-hover ' : ''}${this.hover ? 'hover' : ''}`,
         style: `width: ${this.width}; height: ${this.height}`,
         onClick: this.handleClick,
-        onMouseOver: this.handleMouseover,
-        onMouseOut: this.handleMouseout,
+        onMouseEnter: this.handleMouseEnter,
+        onMouseLeave: this.handleMouseLeave,
       },
       h(
         'div', {
@@ -82,14 +82,16 @@ export default defineComponent({
         this.$emit('update:modelValue', this.hover)
       }
     },
-    handleMouseout () {
+    handleMouseLeave () {
       if (this.activeHover) {
-        this.$emit('update:modelValue', false)
+        this.hover = !this.hover
+        this.$emit('update:modelValue', this.hover)
       }
     },
-    handleMouseover () {
+    handleMouseEnter () {
       if (this.activeHover) {
-        this.$emit('update:modelValue', true)
+        this.hover = !this.hover
+        this.$emit('update:modelValue', this.hover)
       }
     }
   },
@@ -113,7 +115,6 @@ export default defineComponent({
           perspective: 1000;
 }
 
-.flip-container.active-hover:hover .flipper,
 .flip-container.hover .flipper {
   -webkit-transform: rotateY(180deg);
       -moz-transform: rotateY(180deg);
