@@ -110,15 +110,11 @@ export default defineComponent({
 
 <style>
 .flip-container {
-  -webkit-perspective: 1000;
-      -moz-perspective: 1000;
-          perspective: 1000;
+  perspective: 1000;
 }
 
 .flip-container.hover .flipper {
-  -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg) rotateX(180deg);
 }
 
 .flipper {
@@ -131,9 +127,7 @@ export default defineComponent({
 
 .front, .back {
   transform-style: preserve-3d; /* this fixed chrome issue*/
-  -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -141,14 +135,10 @@ export default defineComponent({
 
 .front {
   z-index: 2;
-  -webkit-transform: rotateY(0);
-      -moz-transform: rotateY(0);
-          transform: rotateY(0);
+  transform: rotateY(0);
 }
 
 .back {
-  -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 </style>
