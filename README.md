@@ -91,11 +91,12 @@ this.flipped = true; //or false -> to flip front/back
 
 # Properties
 
-|               | Description             | Type    | Required | Default Value |
-| ------------- | ----------------------- | ------- | -------- | ------------- |
-| active-click  | flip on click           | Boolean | False    | False         |
-| active-hover  | flip on hover           | Boolean | False    | False         |
-| height        | component height        | String  | True     |               |
-| width         | component with          | String  | True     |               |
-| transition    | component transition    | String  | False    | 0.5s          |
-| v-model       | bind flip with variable | Boolean | False    |               |
+|               | Description               | Type    | Required | Default Value |
+| ------------- | ------------------------- | ------- | -------- | ------------- |
+| active-click  | flip on click             | Boolean | false    | false         |
+| active-hover  | flip on hover             | Boolean | false    | false         |
+| height        | component height          | String  | true     |               |
+| width         | component with            | String  | true     |               |
+| transition    | component transition      | String  | false    | 0.5s          |
+| v-model       | bind flip with variable   | Boolean | false    |               |
+| horizontal    | switch to horizontal flip | Boolean | false    | false         |
