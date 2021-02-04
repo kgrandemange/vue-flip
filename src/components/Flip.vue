@@ -1,111 +1,123 @@
 <script lang="ts">
-import { defineComponent, h } from 'vue'
-import { validateWidth, validateHeight, validateTransitionDuration } from '../assets/js/validator'
+import { defineComponent, h } from "vue";
+import {
+  validateWidth,
+  validateHeight,
+  validateTransitionDuration,
+} from "../assets/js/validator";
 
 export default defineComponent({
-  name: 'flip',
+  name: "flip",
   props: {
     activeClick: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     activeHover: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
+    },
+    horizontal: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
     width: {
       type: String,
       required: true,
-      validator: validateWidth
+      validator: validateWidth,
     },
     height: {
       type: String,
       required: true,
-      validator: validateHeight
+      validator: validateHeight,
     },
     transition: {
       type: String,
       required: false,
-      default: '0.5s',
-      validator: validateTransitionDuration
+      default: "0.5s",
+      validator: validateTransitionDuration,
     },
     modelValue: {
       type: Boolean,
-      required: false
-    }
+      required: false,
+    },
   },
-  render () {
+  render() {
     return h(
-      'div',
+      "div",
       {
-        class: `flip-container ${this.activeHover ? 'active-hover ' : ''}${this.hover ? 'hover' : ''}`,
+        class: `flip-container ${this.activeHover ? "active-hover " : ""}${
+          this.hover ? "hover" : ""
+        } ${this.horizontal ? "horizontal" : ""}`,
         style: `width: ${this.width}; height: ${this.height}`,
         onClick: this.handleClick,
         onMouseEnter: this.handleMouseEnter,
         onMouseLeave: this.handleMouseLeave,
       },
       h(
-        'div', {
-          class: 'flipper',
-          style: `transition-duration: ${this.transition}`
+        "div",
+        {
+          class: "flipper",
+          style: `transition-duration: ${this.transition}`,
         },
         [
           h(
-            'div',
+            "div",
             {
-              class: 'front'
+              class: "front",
             },
-            this.$slots.front ? this.$slots.front() : ''
+            this.$slots.front ? this.$slots.front() : ""
           ),
           h(
-            'div',
+            "div",
             {
-              class: 'back'
+              class: "back",
             },
-            this.$slots.back ? this.$slots.back() : ''
-          )
+            this.$slots.back ? this.$slots.back() : ""
+          ),
         ]
       )
-    )
+    );
   },
-  data () {
+  data() {
     return {
-      hover: false
-    }
+      hover: false,
+    };
   },
   methods: {
-    handleClick () {
+    handleClick() {
       if (this.activeClick) {
-        this.hover = !this.hover
-        this.$emit('update:modelValue', this.hover)
+        this.hover = !this.hover;
+        this.$emit("update:modelValue", this.hover);
       }
     },
-    handleMouseLeave () {
+    handleMouseLeave() {
       if (this.activeHover) {
-        this.hover = !this.hover
-        this.$emit('update:modelValue', this.hover)
+        this.hover = !this.hover;
+        this.$emit("update:modelValue", this.hover);
       }
     },
-    handleMouseEnter () {
+    handleMouseEnter() {
       if (this.activeHover) {
-        this.hover = !this.hover
-        this.$emit('update:modelValue', this.hover)
+        this.hover = !this.hover;
+        this.$emit("update:modelValue", this.hover);
       }
-    }
+    },
   },
-  mounted () {
+  mounted() {
     if (this.modelValue) {
-      this.hover = this.modelValue
+      this.hover = this.modelValue;
     }
   },
   watch: {
-    modelValue (value) {
-      this.hover = value
-    }
-  }
-})
+    modelValue(value) {
+      this.hover = value;
+    },
+  },
+});
 </script>
 
 <style>
@@ -114,7 +126,11 @@ export default defineComponent({
 }
 
 .flip-container.hover .flipper {
-  transform: rotateY(180deg) rotateX(180deg);
+  transform: rotateY(180deg);
+}
+
+.flip-container.hover.horizontal .flipper {
+  transform: rotateX(180deg);
 }
 
 .flipper {
@@ -125,7 +141,8 @@ export default defineComponent({
   height: 100%;
 }
 
-.front, .back {
+.front,
+.back {
   transform-style: preserve-3d; /* this fixed chrome issue*/
   backface-visibility: hidden;
   position: absolute;
