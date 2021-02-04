@@ -244,4 +244,17 @@ describe('Flip.vue', () => {
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted()['update:modelValue']).toEqual([[true], [false], [true]])
   })
+
+  it ('flip horizontally when horizontal is set to true', () => {
+    const wrapper = shallowMount(Flip, {
+      props: {
+        width: '100px',
+        height: '100px',
+        horizontal: true
+      }
+    })
+
+    expect(wrapper.classes()).toContain('horizontal')
+  })
 })
+
