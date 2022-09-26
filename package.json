@@ -15,9 +15,10 @@
   "version": "3.0.1",
   "description": "A component to flip elements",
   "type": "module",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit && vite build && vue-tsc --declaration --emitDeclarationOnly && cp _types/components/index.d.ts _types/components/Flip.vue.d.ts dist/.",
     "preview": "vite preview",
     "build:demo": "vue-tsc --noEmit && vite build --config vite.docs.config.ts",
     "test:unit": "vitest"
@@ -26,6 +27,7 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@babel/types": "^7.19.0",
     "@types/prismjs": "^1.26.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "@vue/test-utils": "^2.0.2",
