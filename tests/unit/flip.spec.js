@@ -1,6 +1,7 @@
 import Flip from '../../src/components/Flip.vue'
 import { shallowMount, mount } from '@vue/test-utils'
 import { ref } from 'vue'
+import { describe, it, expect } from 'vitest'
 
 describe('Flip.vue', () => {
   it('has height', () => {

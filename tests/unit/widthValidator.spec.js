@@ -1,4 +1,5 @@
 import { validateSize } from '../../src/assets/js/validator'
+import { describe, it, expect } from 'vitest'
 
 describe('Size validator', () => {
   it('can be equal to max-content', () => {
