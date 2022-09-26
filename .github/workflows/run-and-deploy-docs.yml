@@ -22,7 +22,7 @@ jobs:
     - name: Set-up Node
       uses: actions/setup-node@v1
       with:
-        node-version: "13.x"
+        node-version: "18.x"
     - run: npm ci
     - run: npm run build:demo
     - name: Deploy
