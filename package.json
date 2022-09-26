@@ -10,7 +10,7 @@
     }
   },
   "private": false,
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A component to flip elements",
   "type": "module",
   "scripts": {
