@@ -1,73 +1,33 @@
 {
   "name": "vue-flip",
-  "version": "2.2.0",
-  "private": false,
-  "description": "A component to flip elements",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vueFlip ./src/components/Flip.vue",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
-    "build:demo": "vue-cli-service build --dest docs"
+  "files": ["dist"],
+  "main": "./dist/vue-flip.umd.js",
+  "module": "./dist/vue-flip.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-flip.js",
+      "require": "./dist/vue-flip.umd.js"
+    }
   },
-  "main": "./dist/vueFlip.common.js",
-  "files": [
-    "dist/*",
-    "types/*"
-  ],
-  "types": "./types/index.d.ts",
+  "private": false,
+  "version": "2.2.0",
+  "description": "A component to flip elements",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "build:demo": "vue-tsc --noEmit && vite build --config vite.docs.config.ts"
+  },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0-0"
+    "vue": "^3.2.37"
   },
   "devDependencies": {
-    "@types/prismjs": "^1.16.1",
-    "@typescript-eslint/eslint-plugin": "^2.33.0",
-    "@typescript-eslint/parser": "^2.33.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-unit-jest": "^4.5.6",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0-0",
-    "@vue/eslint-config-typescript": "^5.0.2",
-    "@vue/test-utils": "^2.0.0-0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0",
-    "prismjs": "^1.21.0",
-    "typescript": "~3.9.3",
-    "vue-jest": "^5.0.0-0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "@vue/typescript"
-    ],
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
-    },
-    "rules": {},
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "@types/prismjs": "^1.26.0",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "prismjs": "^1.29.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vue-tsc": "^0.40.4"
+  }
 }

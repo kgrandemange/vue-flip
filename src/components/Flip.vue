@@ -6,6 +6,19 @@ import {
   validateTransitionDuration,
 } from "../assets/js/validator";
 
+type cssObject = {
+  [key: string]: string | number;
+};
+
+const backAndFrontStyle: cssObject = {
+  'transform-style': 'preserve-3d',
+  /* this fixed chrome issue*/
+  backfaceVisibility: 'hidden',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+}
+
 export default defineComponent({
   name: "flip",
   props: {
@@ -45,29 +58,63 @@ export default defineComponent({
       required: false,
     },
   },
+  computed: {
+    computedFlippterStyle(): cssObject {
+      const result = {
+        transition: '0.6s',
+        'transform-style': 'preserve-3d',
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        'transition-duration': this.transition,
+        transform: '',
+      }
+
+      if (this.hover && this.horizontal) {
+        result.transform = 'rotateX(180deg)'
+      } else if (this.hover) {
+        result.transform = 'rotateY(180deg)'
+      }
+
+      return result
+    },
+    computedBackStyle(): cssObject {
+      return {
+        ...backAndFrontStyle,
+        transform: 'rotateY(180deg)',
+      }
+    },
+    computedFrontStyle(): cssObject {
+      return {
+        ...backAndFrontStyle,
+        'z-index': 2,
+        transform: 'rotateY(0deg)',
+      }
+    },
+  },
   render() {
     return h(
       "div",
       {
-        class: `flip-container ${this.activeHover ? "active-hover " : ""}${
-          this.hover ? "hover" : ""
-        } ${this.horizontal ? "horizontal" : ""}`,
-        style: `width: ${this.width}; height: ${this.height}`,
+        class: `${this.activeHover ? "active-hover " : ""}${this.hover ? "hover" : ""
+          } ${this.horizontal ? "horizontal" : ""}`,
+        style: `perspective: 1000; width: ${this.width}; height: ${this.height}`,
         onClick: this.handleClick,
-        onMouseEnter: this.handleMouseEnter,
-        onMouseLeave: this.handleMouseLeave,
+        onMouseenter: this.handleMouseEnter,
+        onMouseleave: this.handleMouseLeave,
       },
       h(
         "div",
         {
           class: "flipper",
-          style: `transition-duration: ${this.transition}`,
+          style: this.computedFlippterStyle,
         },
         [
           h(
             "div",
             {
               class: "front",
+              style: this.computedFrontStyle,
             },
             this.$slots.front ? this.$slots.front() : ""
           ),
@@ -75,6 +122,7 @@ export default defineComponent({
             "div",
             {
               class: "back",
+              style: this.computedBackStyle,
             },
             this.$slots.back ? this.$slots.back() : ""
           ),
@@ -119,43 +167,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style>
-.flip-container {
-  perspective: 1000;
-}
-
-.flip-container.hover .flipper {
-  transform: rotateY(180deg);
-}
-
-.flip-container.hover.horizontal .flipper {
-  transform: rotateX(180deg);
-}
-
-.flipper {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.front,
-.back {
-  transform-style: preserve-3d; /* this fixed chrome issue*/
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.front {
-  z-index: 2;
-  transform: rotateY(0);
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-</style>
